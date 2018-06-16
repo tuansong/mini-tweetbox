@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
+import avatar from './avatoar.jpg'
 
 class TweetBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ""
+            text: "",
+            textNum : 140
         }
     }
 
+    handleChange(text) {
+        this.setState({
+            text: text,
+            textNum : 140 - text.length
+        })
+    }
 
     render() {
         return (
             <div>
-                <input type="text"
+                <img src="https://i.imgur.com/offAvzq.jpg" alt="" className="img-thumbnail"/>
+                <input
+                    className="form-control" 
+                    type="text"
                     placeholder={this.props.placeholder}
-                    onChange={(tweet) => this.setState({ text: tweet.target.value })} />
-                <button onClick={() => this.props.onTweet(this.state.text)}> tweet </button>
+                    onChange={(e) => this.handleChange(e.target.value)} 
+                />
+                    <p>{this.state.textNum}</p>
+                    <button 
+                        onClick={() => this.props.onTweet(this.state.text)} 
+                        disabled={this.state.textNum < 0}
+                        className="btn btn-info"
+                    > tweet </button> 
             </div>
         )
     }
