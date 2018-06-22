@@ -55,12 +55,14 @@ class App extends Component {
     })
   }
 
+  fakeId = () => Math.random() * this.state.tweets.length;
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title" className="text-info">Welcome to my minitweet app</h1>
+          <h1 className="App-title text-info">Welcome to my minitweet app</h1>
         </header>
         <div className="container">
           <div className="row">
@@ -71,7 +73,8 @@ class App extends Component {
               {this.state.tweets.map(tweet => <Tweet
               tweet={tweet}
               handleLike={this.handleLike.bind(this)}
-              handleRemove={this.handleRemove.bind(this)} />)}
+              handleRemove={this.handleRemove.bind(this)}
+              key={this.fakeId()}/>)}
             </div>
           </div>
         </div>

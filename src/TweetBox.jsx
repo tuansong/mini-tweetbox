@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import avatar from './avatoar.jpg'
 
 class TweetBox extends Component {
     constructor(props) {

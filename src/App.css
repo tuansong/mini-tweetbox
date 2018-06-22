@@ -27,7 +27,7 @@
 
 .tweet {
   border: 1px solid lightblue;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 1em;
 }
 
@@ -36,12 +36,23 @@
   height: 50px;
 }
 
-.button-group {
-  text-align: right
+.button-group{
+  flex-wrap: wrap;
+  height: 38px;
+}
+
+.button-group a{
+  position: relative;
+  bottom: -17px;
+}
+
+.button-group .btn {
+  position: absolute;
+  right: 16px;
 }
 
 .top-tweet {
   display: flex;
   padding: 0.5em;
-  border-radius: 10px;
+
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Tweet extends Component {
-    
     render() {
         let tweet = this.props.tweet;
         return (
