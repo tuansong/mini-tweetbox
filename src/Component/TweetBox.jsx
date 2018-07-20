@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class TweetBox extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class TweetBox extends Component {
                         onClick={() => this.props.onTweet(this.state.text)} 
                         disabled={this.state.textNum < 0}
                         className="btn btn-info"
-                    > tweet </button> 
+                    > TWEET </button> 
             </div>
         )
     }
